@@ -13,13 +13,14 @@ function formatDate(timestamp){
 }
 
 function displayTemperature(response){
-    console.log(response.data);
     document.querySelector(".temp").innerHTML =Math.round(response.data.main.temp);
     document.querySelector(".city").innerHTML = response.data.name;
     document.querySelector(".description").innerHTML = response.data.weather[0].description;
     document.querySelector(".humidity").innerHTML = response.data.main.humidity;
     document.querySelector(".wind").innerHTML = Math.round(response.data.wind.speed);
     document.querySelector(".date").innerHTML = formatDate(response.data.dt *1000);
+    let iconElement = document.querySelector(".icon");
+    iconElement.setAttribute("src", `https://openweathermap.org/img/wn/04n.png`);
     
  }
 
