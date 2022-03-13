@@ -36,7 +36,7 @@ function search(city){
 
  function changeCity(event){
      event.preventDefault();
-    let searchBarElement = document.querySelector(".search-bar");
+    let searchBarElement = document.querySelector("#search-bar");
     search(searchBarElement.value);
 
 
