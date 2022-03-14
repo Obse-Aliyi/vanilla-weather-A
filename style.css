@@ -73,11 +73,13 @@ input#city-input {
   color: rgb(110, 87, 87);
   text-decoration: none;
   top: 24px;
+  cursor: default;
 }
 .fahrenheit {
   color: rgb(110, 87, 87);
   text-decoration: none;
   top: 24px;
+  cursor: default;
 }
 ul {
   list-style: none;

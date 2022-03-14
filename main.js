@@ -13,7 +13,8 @@ function formatDate(timestamp){
 }
 
 function displayTemperature(response){
-    document.querySelector(".temp").innerHTML =Math.round(response.data.main.temp);
+    celsiusTemperature = response.data.main.temp;
+    document.querySelector(".temp").innerHTML =Math.round(celsiusTemperature);
     document.querySelector(".city").innerHTML = response.data.name;
     document.querySelector(".description").innerHTML = response.data.weather[0].description;
     document.querySelector(".humidity").innerHTML = response.data.main.humidity;
@@ -46,9 +47,33 @@ function search(city){
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", changeCity);
 
- search("Edmonton");
 
 
+function showFahrenheit(event){
+    event.preventDefault();
+    let fahrenheitTemp = (celsiusTemperature*9)/5+32;
+    let temperatureElement = document.querySelector(".temp");
+    temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+}
+
+
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector(".fahrenheit");
+fahrenheitLink.addEventListener("click",showFahrenheit);
+
+function showCelsius(event){
+    event.preventDefault();
+   let temperatureElement = document.querySelector(".temp");
+   temperatureElement.innerHTML = Math.round(celsiusTemperature);
+
+}
+
+
+let celsiusLink = document.querySelector(".celsius-active");
+celsiusLink.addEventListener("click",showCelsius);
+
+search("Edmonton");
 
 
 
