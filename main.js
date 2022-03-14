@@ -36,7 +36,7 @@ function search(city){
 
  function changeCity(event){
      event.preventDefault();
-    let searchBarElement = document.querySelector("#search-bar");
+    let searchBarElement = document.querySelector("#city-input");
     search(searchBarElement.value);
 
 
@@ -46,7 +46,7 @@ function search(city){
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", changeCity);
 
- search("Edmonton,AB");
+ search("Edmonton");
 
 
 
